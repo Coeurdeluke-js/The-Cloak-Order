@@ -1,0 +1,318 @@
+/* Font Face */
+@font-face {
+    font-family: 'KnightsTemplar';
+    src: url('fonts/KnightsTemplar.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Optimized font loading */
+}
+
+/* CSS Reset & Variables */
+:root {
+    --primary-bg: #121212;
+    --card-bg: rgba(0, 0, 0, 0.5);
+    --text-color: #fafafa;
+    --accent-color: #ec4d58;
+    --accent-hover: #c83b44;
+    --gray-color: #888;
+    --card-border-radius: 10px;
+    --input-border-radius: 4px;
+    --transition-normal: 0.3s ease;
+    --transition-fade: 0.8s ease-in-out;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    opacity: 0;
+    transition: opacity var(--transition-fade);
+}
+
+body.fade-in {
+    opacity: 1;
+}
+
+h1 {
+    font-family: 'KnightsTemplar', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+span {
+    color: var(--accent-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: text-decoration var(--transition-normal);
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Background Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('tu-textura-de-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Container Styles */
+.container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--card-border-radius);
+    width: 350px;
+    text-align: center;
+    position: relative;
+    transition: opacity var(--transition-fade);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+/* Login Form Styles */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--text-color);
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: var(--input-border-radius);
+    box-sizing: border-box;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--input-border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-normal);
+    font-weight: bold;
+}
+
+.login-form button:hover {
+    background-color: var(--accent-hover);
+}
+
+.login-form p {
+    margin: 20px 0;
+    width: 90%;
+    text-align: center;
+}
+
+/* Toggle Styles */
+.toggle-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.toggle-switch {
+    width: 50px;
+    height: 25px;
+    background-color: var(--text-color);
+    border-radius: 12.5px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch i {
+    font-size: 1em;
+    transition: all var(--transition-normal);
+}
+
+.toggle-switch .fa-lock,
+.toggle-switch .fa-globe {
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.toggle-switch .fa-lock {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.toggle-switch .fa-globe {
+    color: var(--gray-color);
+    transform: scale(1);
+}
+
+.toggle-switch.active .fa-lock {
+    color: var(--gray-color);
+    transform: scale(1);
+}
+
+.toggle-switch.active .fa-globe {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* Page Containers */
+.public-container,
+.member-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Cards */
+.public-card,
+.member-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--accent-color);
+    border-radius: var(--card-border-radius);
+    padding: 40px;
+    width: 80%; /* Set explicit width */
+    max-width: 400px;
+    transition: opacity var(--transition-fade);
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Content */
+.public-card i,
+.member-card i {
+    font-size: 5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.public-card h1,
+.member-card h1 {
+    font-family: 'Cinzel', serif;
+    margin-bottom: 10px;
+}
+
+.public-card p,
+.member-card p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.public-card a,
+.member-card a {
+    margin-top: 20px;
+    padding: 8px 16px;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--input-border-radius);
+    transition: background-color var(--transition-normal);
+}
+
+.public-card a:hover,
+.member-card a:hover {
+    background-color: rgba(236, 77, 88, 0.2);
+    text-decoration: none;
+}
+
+/* Fade Effect Class */
+.fade-in-element {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in-element.loaded {
+    opacity: 1;
+}
+
+/* Media Queries - Desktop First Approach */
+@media (max-width: 480px) {
+    .container {
+        width: 85%;
+        max-width: 320px;
+        padding: 30px 20px;
+    }
+
+    .login-form img {
+        width: 120px;
+    }
+    
+    .public-card,
+    .member-card {
+        width: 85%;
+        max-width: 280px;
+        padding: 25px 20px;
+    }
+    
+    .public-card i,
+    .member-card i {
+        font-size: 4em;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        width: 90%;
+        padding: 20px 15px;
+    }
+    
+    .public-card,
+    .member-card {
+        width: 90%;
+        max-width: 240px;
+        padding: 20px 15px;
+    }
+    
+    .login-form img {
+        width: 100px;
+    }
+    
+    .public-card h1,
+    .member-card h1 {
+        font-size: 1.3rem;
+    }
+    
+    .public-card p,
+    .member-card p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .public-card i,
+    .member-card i {
+        font-size: 3.5em;
+    }
+}
