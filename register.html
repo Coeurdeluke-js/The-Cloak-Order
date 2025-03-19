@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cloak Order - Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
+</head>
+<body class="fade-in">
+    <div class="container">
+        <div class="login-form">
+            <img src="logo.png" alt="The Cloak Order Logo">
+            <h1>Registro</h1>
+            
+            <input type="text" id="nickname" placeholder="Nickname">
+            <input type="password" id="password" placeholder="Contraseña">
+            <input type="text" id="fullName" placeholder="Nombre completo">
+            
+            <div class="phone-container">
+                <input type="tel" id="phone" placeholder="Teléfono" value="+44">
+                <img id="countryFlag" src="uk.png" alt="Country Flag">
+                <div id="countryDropdown" class="country-dropdown"></div>
+            </div>
+            
+            <input type="number" id="age" placeholder="Edad">
+            <input type="email" id="email" placeholder="Correo Electrónico">
+            
+            <div class="uid-row">
+                <input type="text" id="uid" placeholder="UID">
+                <button id="noUidButton">No tengo</button>
+            </div>
+            
+            <button id="registerButton">Darse de Alta</button>
+            <div id="message"></div>
+        </div>
+    </div>
+    <script src="register.js"></script>
+    <script src="firebase.js"></script>
+</body>
+</html>

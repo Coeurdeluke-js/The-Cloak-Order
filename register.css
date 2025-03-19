@@ -1,0 +1,327 @@
+/* Base styles */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ec4d58;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d93c48;
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ec4d58 #111;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-form {
+    background-color: #111;
+    padding: 30px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-form img {
+    width: 120px;
+    margin-bottom: 5px; /* Reduced margin to bring heading closer to logo */
+    max-width: 100%;
+    height: auto;
+}
+
+.login-form h1 {
+    font-size: 24px;
+    margin-top: 0; /* Remove top margin to bring it closer to logo */
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+/* Form elements */
+input[type="text"], 
+input[type="password"], 
+input[type="tel"], 
+input[type="email"], 
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 3px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Phone input with flag styling */
+.phone-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#phone {
+    width: 100%;
+    padding-right: 40px; /* Make room for the flag */
+    margin-bottom: 0;
+}
+
+#countryFlag {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px; 
+    height: auto;
+}
+
+/* Country dropdown */
+.country-dropdown {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #111;
+    border: 1px solid #333;
+    z-index: 10;
+    display: none;
+    top: 100%;
+    left: 0;
+    border-radius: 3px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.country-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.country-option:hover {
+    background-color: #222;
+}
+
+.country-option img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* UID container styling */
+.uid-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+#uid {
+    width: 60%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    margin-bottom: 0;
+    height: 40px;
+}
+
+#noUidButton {
+    width: 40%;
+    padding: 10px 0;
+    border: 1px solid #ec4d58;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    height: 40px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+#noUidButton:hover {
+    background-color: rgba(236, 77, 88, 0.1);
+}
+
+/* Register button styling */
+#registerButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #ec4d58;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    height: 45px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+#registerButton:hover {
+    background-color: #d93c48;
+}
+
+#message {
+    margin-top: 15px;
+    color: #ec4d58;
+    font-size: 14px;
+    min-height: 18px;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 480px) {
+    .login-form {
+        padding: 20px 15px;
+    }
+    
+    .login-form h1 {
+        font-size: 20px;
+    }
+    
+    .uid-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #uid, #noUidButton {
+        width: 100%;
+    }
+    
+    #noUidButton {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-height: 600px) {
+    .container {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    
+    .login-form {
+        margin-bottom: 20px;
+    }
+    
+    .login-form img {
+        width: 80px;
+    }
+    
+    .login-form h1 {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 320px) {
+    .login-form {
+        padding: 15px 10px;
+    }
+    
+    input[type="text"], 
+    input[type="password"], 
+    input[type="tel"], 
+    input[type="email"], 
+    input[type="number"] {
+        padding: 8px;
+        height: 36px;
+    }
+    
+    #uid, #noUidButton {
+        height: 36px;
+    }
+    
+    #registerButton {
+        height: 40px;
+    }
+}
+
+/* For high-density screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #countryFlag {
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    .country-option img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* For dark mode preference */
+@media (prefers-color-scheme: dark) {   
+    body {
+        background-color: #000;
+    }
+    
+    .login-form {
+        background-color: #111;
+    }
+}
+
+/* For reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in, .fade-out {
+        animation: none;
+    }
+}

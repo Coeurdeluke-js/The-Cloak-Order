@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cloak Order - Inicio de Sesión</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <script src="https://www.gstatic.com/firebasejs/7.20/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20/firebase-auth-compat.js"></script>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+</head>
+<body class="fade-in">
+    <div class="container">
+        <div class="login-form">
+            <img src="logo.png" alt="The Cloak Order Logo">
+            <h1>The <span>Cloak</span> Order</h1>
+            <input type="text" placeholder="Nombre de usuario">
+            <input type="password" placeholder="Contraseña">
+            <button>Iniciar Sesión</button>
+            <p id="register-message">Acceso reservado para miembros. Si crees poseer las cualidades requeridas, inicia el proceso de selección <a href="register.html">aquí</a>.</p>
+            <p id="public-access-message">Para acceder a nuestros servicios públicos, active el modo "Público".</p>
+            <div class="toggle-container">
+                <div class="toggle-switch">
+                    <i class="fas fa-lock active"></i>
+                    <i class="fas fa-globe"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="firebase.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
