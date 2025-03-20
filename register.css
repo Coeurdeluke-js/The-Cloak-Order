@@ -1,6 +1,14 @@
+/* Font Face */
+@font-face {
+    font-family: 'KnightsTemplar';
+    src: url('fonts/KnightsTemplar.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Optimized font loading */
+}
 /* Base styles */
 body {
-    background-color: #000;
+    background: linear-gradient(90deg, #121212, #1e1e1e); /* subtle gradient */
     color: #fff;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,7 +22,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #111;
+    background: #121212;
     border-radius: 4px;
 }
 
@@ -30,7 +38,7 @@ body {
 /* Firefox scrollbar */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #ec4d58 #111;
+    scrollbar-color: #ec4d58 #121212;
 }
 
 .container {
@@ -43,8 +51,9 @@ body {
 }
 
 .login-form {
-    background-color: #111;
-    padding: 30px;
+    background: linear-gradient(160deg, #121212, #181818); /* subtle gradient */
+    padding: 32px;
+    padding-top: 0; /* Remove top padding to bring it closer to logo */
     border-radius: 5px;
     width: 100%;
     max-width: 400px;
@@ -53,17 +62,17 @@ body {
 }
 
 .login-form img {
-    width: 120px;
-    margin-bottom: 5px; /* Reduced margin to bring heading closer to logo */
+    width: 200px;
     max-width: 100%;
     height: auto;
 }
 
 .login-form h1 {
-    font-size: 24px;
+    font-size: 2.5rem;
     margin-top: 0; /* Remove top margin to bring it closer to logo */
     margin-bottom: 20px;
     font-weight: normal;
+    font-family: KnightsTemplar, sans-serif;
 }
 
 /* Form elements */
@@ -76,8 +85,8 @@ input[type="number"] {
     padding: 10px;
     margin-bottom: 15px;
     border: none;
-    background-color: #000;
-    color: #fff;
+    background-color: #fafafa;
+    color: #121212;
     box-sizing: border-box;
     height: 40px;
     border-radius: 3px;
@@ -121,8 +130,8 @@ input[type="number"] {
     width: 100%;
     max-height: 200px;
     overflow-y: auto;
-    background-color: #111;
-    border: 1px solid #333;
+    background-color: #fafafa;
+    border: 1px solid #121212;
     z-index: 10;
     display: none;
     top: 100%;
@@ -137,10 +146,12 @@ input[type="number"] {
     padding: 8px 10px;
     cursor: pointer;
     text-align: left;
+    color: #121212;
 }
 
 .country-option:hover {
-    background-color: #222;
+    background-color: #121212;
+    color: #ec4d58;
 }
 
 .country-option img {
@@ -160,8 +171,8 @@ input[type="number"] {
 #uid {
     width: 60%;
     padding: 10px;
-    background-color: #000;
-    color: #fff;
+    background-color: #fafafa;
+    color: #121212;
     border: none;
     margin-bottom: 0;
     height: 40px;
@@ -172,11 +183,11 @@ input[type="number"] {
     padding: 10px 0;
     border: 1px solid #ec4d58;
     background-color: transparent;
-    color: #fff;
+    color: #fafafa;
     cursor: pointer;
     font-size: 0.9em;
     height: 40px;
-    border-radius: 3px;
+    border-radius: 9px;
     transition: background-color 0.2s;
 }
 
@@ -190,13 +201,14 @@ input[type="number"] {
     padding: 12px;
     background-color: #ec4d58;
     border: none;
-    color: white;
+    color: #fafafa;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: px;
     height: 45px;
-    border-radius: 3px;
+    border-radius: 9px;
     transition: background-color 0.2s;
+    height: 40px;
 }
 
 #registerButton:hover {
